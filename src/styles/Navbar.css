@@ -14,6 +14,12 @@ header h1 {
     font-size: 1.875rem;
 }
 
+.header-link,
+.link {
+  text-decoration: none;
+  color: #121212;
+}
+
 .nav-list {
   display: flex;
   align-items: center;
