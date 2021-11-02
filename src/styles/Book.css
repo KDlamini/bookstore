@@ -1,25 +1,25 @@
 .book-actions {
-    display: flex;
-    list-style: none;
-    padding: 0;
+  display: flex;
+  list-style: none;
+  padding: 0;
 }
 
 .book-actions li {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 1.5rem;
-    width: 6.689rem;
-    border-right: 1px solid #e8e8e8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 6.689rem;
+  border-right: 1px solid #e8e8e8;
 }
 
 .book-actions li:last-child {
-    border: none;
+  border: none;
 }
 
 .action {
-    margin: 0;
-    background: none;
-    border: none;
-    cursor: pointer;
+  margin: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
