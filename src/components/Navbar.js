@@ -7,7 +7,7 @@ function Navbar() {
     <nav className="navbar">
       <header>
         <h1>
-          <Link to="/" className="header-link">Bookstore CMS</Link>
+          <Link to="/books" className="header-link">Bookstore CMS</Link>
         </h1>
       </header>
       <ul className="nav-list">
