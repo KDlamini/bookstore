@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Books from './pages/Books';
 import Categories from './pages/Categories';
@@ -15,6 +15,9 @@ function App() {
         </Route>
         <Route path="/categories">
           <Categories />
+        </Route>
+        <Route path="/">
+          <Redirect to="/books" />
         </Route>
       </Switch>
     </main>
