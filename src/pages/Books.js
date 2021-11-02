@@ -1,8 +1,11 @@
 import React from 'react';
+import Book from '../components/Book';
 
 function Books() {
   return (
-    <div />
+    <section className="books-page">
+      <Book />
+    </section>
   );
 }
 
