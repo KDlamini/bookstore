@@ -24,19 +24,23 @@ function AddBook() {
       <h2>ADD NEW BOOK</h2>
       <input
         type="text"
+        name="title"
         placeholder="Book title"
         onChange={(e) => setTitle(e.target.value)}
+        required
       />
 
       <input
         type="dropdown"
+        name="category"
         placeholder="Category"
         onChange={(e) => setCategory(e.target.value)}
+        required
       />
 
       <button
         type="submit"
-        onSubmit={() => submitBookToStore(title, category)}
+        onClick={(e) => { e.preventDefault(); submitBookToStore(title, category); }}
       >
         ADD BOOK
       </button>
