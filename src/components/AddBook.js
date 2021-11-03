@@ -4,7 +4,7 @@ import { addBook } from '../redux/books/books';
 
 function AddBook() {
   const [title, setTitle] = useState('');
-  const [category, setCategory] = useState('');
+  const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
   const submitBookToStore = (title, author) => {
@@ -31,16 +31,16 @@ function AddBook() {
       />
 
       <input
-        type="dropdown"
-        name="category"
-        placeholder="Category"
-        onChange={(e) => setCategory(e.target.value)}
+        type="text"
+        name="author"
+        placeholder="Author"
+        onChange={(e) => setAuthor(e.target.value)}
         required
       />
 
       <button
         type="submit"
-        onClick={(e) => { e.preventDefault(); submitBookToStore(title, category); }}
+        onClick={(e) => { e.preventDefault(); submitBookToStore(title, author); }}
       >
         ADD BOOK
       </button>
