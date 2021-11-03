@@ -7,7 +7,8 @@ function AddBook() {
   const [author, setAuthor] = useState('');
   const dispatch = useDispatch();
 
-  const submitBookToStore = (title, author) => {
+  const submitBookToStore = (e, title, author) => {
+    e.preventDefault();// TEMPORALLY CODE: prevent clearing console and inputs to test redux logger.
     const id = title + Math.floor(Math.random() * (1000 - 100 + 1) + 100);
 
     const newBook = {
@@ -40,7 +41,7 @@ function AddBook() {
 
       <button
         type="submit"
-        onClick={(e) => { e.preventDefault(); submitBookToStore(title, author); }}
+        onClick={(e) => submitBookToStore(e, title, author)}
       >
         ADD BOOK
       </button>
