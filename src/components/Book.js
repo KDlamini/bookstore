@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 import '../styles/Book.css';
 
 function Book({ book }) {
+  const dispatch = useDispatch();
+
   return (
     <div className="book-container">
       <h3>{book.genre}</h3>
@@ -13,7 +17,13 @@ function Book({ book }) {
           <button type="button" className="action comments">Comments</button>
         </li>
         <li>
-          <button type="button" className="action remove">Remove</button>
+          <button
+            type="button"
+            className="action remove"
+            onClick={() => dispatch(removeBook(book.id))}
+          >
+            Remove
+          </button>
         </li>
         <li>
           <button type="button" className="action edit">Edit</button>
@@ -25,6 +35,7 @@ function Book({ book }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
+    id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
     genre: PropTypes.string,
