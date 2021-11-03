@@ -1,11 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import removeBook from './removeBook';
+import { useDispatch } from 'react-redux';
+import { removeBook } from '../redux/books/books';
 import '../styles/Book.css';
 
 function Book({ book }) {
+  const dispatch = useDispatch();
+
+  const handleRemoveBook = (e) => {
+    const { id } = e.target.parentElement.parentElement.parentElement;
+
+    dispatch(removeBook(id));
+  };
+
   return (
-    <div className="book-container">
+    <div id={book.id} className="book-container">
       <h3>{book.genre}</h3>
       <h2>{book.title}</h2>
       <p>{book.author}</p>
@@ -17,7 +26,7 @@ function Book({ book }) {
           <button
             type="button"
             className="action remove"
-            onClick={() => removeBook()}
+            onClick={(e) => handleRemoveBook(e)}
           >
             Remove
           </button>
@@ -32,6 +41,7 @@ function Book({ book }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
+    id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
     genre: PropTypes.string,
