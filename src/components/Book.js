@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import removeBook from './removeBook';
 import '../styles/Book.css';
 
 function Book({ book }) {
@@ -13,7 +14,13 @@ function Book({ book }) {
           <button type="button" className="action comments">Comments</button>
         </li>
         <li>
-          <button type="button" className="action remove">Remove</button>
+          <button
+            type="button"
+            className="action remove"
+            onClick={() => removeBook()}
+          >
+            Remove
+          </button>
         </li>
         <li>
           <button type="button" className="action edit">Edit</button>
