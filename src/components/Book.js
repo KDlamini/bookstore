@@ -7,14 +7,8 @@ import '../styles/Book.css';
 function Book({ book }) {
   const dispatch = useDispatch();
 
-  const handleRemoveBook = (e) => {
-    const { id } = e.target.parentElement.parentElement.parentElement;
-
-    dispatch(removeBook(id));
-  };
-
   return (
-    <div id={book.id} className="book-container">
+    <div className="book-container">
       <h3>{book.genre}</h3>
       <h2>{book.title}</h2>
       <p>{book.author}</p>
@@ -26,7 +20,7 @@ function Book({ book }) {
           <button
             type="button"
             className="action remove"
-            onClick={(e) => handleRemoveBook(e)}
+            onClick={() => dispatch(removeBook(book.id))}
           >
             Remove
           </button>
