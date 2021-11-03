@@ -2,13 +2,9 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import Book from '../components/Book';
 import AddBook from '../components/AddBook';
-import getBooks from '../api/api';
 
 function Books() {
-  const books = getBooks();
-  const state = useSelector((state) => state.booksReducer);
-
-  state.map((book) => books.push(book));
+  const books = useSelector((state) => state.booksReducer);
 
   return (
     <section className="books-page">
