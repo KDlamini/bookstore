@@ -38,7 +38,7 @@ function AddBook({ setCurrentId }) {
   };
 
   return (
-    <form onSubmit={(e) => submitBookToStore(e)}>
+    <form onSubmit={(e) => submitBookToStore(e)} className="addbook-form">
       <h2>ADD NEW BOOK</h2>
       <div className="form-group">
         <input
