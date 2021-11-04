@@ -1,6 +1,8 @@
 # bookstore
 The Bookstore is a website that display a list of books, add a book, and remove a selected book. This will explore the concepts of state management using Redux store, actions and reducers in React. Built with ReactJS.
 
+![screenshot](./src/assets/Screenshot%20from%202021-11-04%2022-42-42.png)
+
 This project is part of the Microverse curriculum module 3. The main objective is to understand how create a React app, use components, hooks, state, run tests, and creating professional documentation for development.
 
 ## Live Preview
