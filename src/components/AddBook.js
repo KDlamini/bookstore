@@ -13,7 +13,17 @@ function AddBook({ setCurrentId }) {
 
   const dispatch = useDispatch();
 
-  const submitBookToStore = (e, title, author, category) => {
+  const handleCategoryInputs = () => {
+    const newCategoryArray = [];
+
+    if (category.length > 0) {
+      category.forEach((item) => newCategoryArray.push(item.value));
+    }
+
+    return newCategoryArray.join(', ');
+  };
+
+  const submitBookToStore = (e) => {
     e.preventDefault();// TEMPORALLY CODE: prevent clearing console and inputs to test redux logger.
     const id = title + Math.floor(Math.random() * (1000 - 100 + 1) + 100);
     setCurrentId(id);
@@ -22,14 +32,14 @@ function AddBook({ setCurrentId }) {
       item_id: id,
       title,
       author,
-      category,
+      category: handleCategoryInputs(),
     };
 
     dispatch(addBook(newBook));
   };
 
   return (
-    <form>
+    <form onSubmit={(e) => submitBookToStore(e)}>
       <h2>ADD NEW BOOK</h2>
       <div className="form-group">
         <input
@@ -57,14 +67,10 @@ function AddBook({ setCurrentId }) {
           Searchable
           Clearable
           isMulti
+          Required
         />
 
-        <button
-          type="submit"
-          onClick={(e) => submitBookToStore(e, title, author, category)}
-        >
-          ADD BOOK
-        </button>
+        <button type="submit">ADD BOOK</button>
       </div>
     </form>
   );
