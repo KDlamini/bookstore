@@ -1,6 +1,6 @@
 /* eslint-disable consistent-return */
 import { ADD_BOOK, REMOVE_BOOK } from '../../actions/actionTypes';
-import getBooks from '../../../api/api';
+import { getBooks } from '../../../api/api';
 
 const initialState = getBooks();
 
