@@ -45,7 +45,7 @@ const deleteData = async (url, id) => {
 
 export const fetchBooks = () => getData(url);
 
-export const postBooks = (book) => postData(url, book);
+export const postBook = (book) => postData(url, book);
 
 export const deleteBook = (id) => deleteData(`${url}/${id}`, id);
 
