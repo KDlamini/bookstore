@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 .book-container {
+  min-width: 18rem;
   height: 10.625rem;
-  margin: 2.313rem 6.25rem;
-  padding: 2rem 9.188rem 1.625rem 1.688rem;
+  margin: 2.313rem 8%;
+  padding: 2rem 0 1.625rem 1.688rem;
   border-radius: 4px;
   border: 1px solid #e8e8e8;
 }
