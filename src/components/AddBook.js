@@ -6,9 +6,10 @@ import { addBook } from '../redux/actions/books';
 function AddBook({ setCurrentId }) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  const submitBookToStore = (e, title, author) => {
+  const submitBookToStore = (e, title, author, category) => {
     e.preventDefault();// TEMPORALLY CODE: prevent clearing console and inputs to test redux logger.
     const id = title + Math.floor(Math.random() * (1000 - 100 + 1) + 100);
     setCurrentId(id);
@@ -17,6 +18,7 @@ function AddBook({ setCurrentId }) {
       item_id: id,
       title,
       author,
+      category,
     };
 
     dispatch(addBook(newBook));
@@ -41,9 +43,17 @@ function AddBook({ setCurrentId }) {
         required
       />
 
+      <input
+        type="text"
+        name="category"
+        placeholder="Category"
+        onChange={(e) => setCategory(e.target.value)}
+        required
+      />
+
       <button
         type="submit"
-        onClick={(e) => submitBookToStore(e, title, author)}
+        onClick={(e) => submitBookToStore(e, title, author, category)}
       >
         ADD BOOK
       </button>
