@@ -17,7 +17,7 @@ function Books() {
   return (
     <section className="books-page">
       {
-        books.map((book) => <Book key={book.id} book={book} />)
+        books.map((book) => <Book key={book.item_id} book={book} />)
       }
       <AddBook setCurrentId={setCurrentId} />
     </section>

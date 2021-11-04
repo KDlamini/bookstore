@@ -14,7 +14,7 @@ function AddBook({ setCurrentId }) {
     setCurrentId(id);
 
     const newBook = {
-      id,
+      item_id: id,
       title,
       author,
     };

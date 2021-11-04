@@ -20,7 +20,7 @@ function Book({ book }) {
           <button
             type="button"
             className="action remove"
-            onClick={() => dispatch(removeBook(book.id))}
+            onClick={() => dispatch(removeBook(book.item_id))}
           >
             Remove
           </button>
@@ -35,7 +35,7 @@ function Book({ book }) {
 
 Book.propTypes = {
   book: PropTypes.shape({
-    id: PropTypes.string,
+    item_id: PropTypes.string,
     title: PropTypes.string,
     author: PropTypes.string,
     genre: PropTypes.string,
@@ -44,7 +44,7 @@ Book.propTypes = {
 
 Book.defaultProps = {
   book: {
-    id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
+    item_id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
   },
 };
 

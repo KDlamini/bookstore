@@ -51,9 +51,9 @@ export const deleteBook = (id) => deleteData(`${url}/${id}`, id);
 
 export const Books = () => [
   {
-    id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
+    item_id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
   },
   {
-    id: 'gjghjf34235', title: 'Harry Potter and The Half-Blood Prince', author: 'J.K Rowling', genre: 'Fantasy',
+    item_id: 'gjghjf34235', title: 'Harry Potter and The Half-Blood Prince', author: 'J.K Rowling', genre: 'Fantasy',
   },
 ];
