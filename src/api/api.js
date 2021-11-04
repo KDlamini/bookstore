@@ -48,12 +48,3 @@ export const fetchBooks = () => getData(url);
 export const postBook = (book) => postData(url, book);
 
 export const deleteBook = (id) => deleteData(`${url}/${id}`, id);
-
-export const Books = () => [
-  {
-    item_id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
-  },
-  {
-    item_id: 'gjghjf34235', title: 'Harry Potter and The Half-Blood Prince', author: 'J.K Rowling', genre: 'Fantasy',
-  },
-];

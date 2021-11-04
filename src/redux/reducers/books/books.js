@@ -1,18 +1,26 @@
 /* eslint-disable consistent-return */
 import { CREATE_BOOK, FETCH_ALL_BOOKS, REMOVE_BOOK } from '../../actions/actionTypes';
-import { Books } from '../../../api/api';
 
-const initialState = Books();
-const data = [];
+const handleData = (data) => {
+  const books = [];
 
-const reducer = (state = initialState, action) => {
+  Object.keys(data).map((key) => {
+    const book = data[key][0];
+    book.item_id = key;
+
+    return books.push(book);
+  });
+
+  return books;
+};
+
+const reducer = (state = [], action) => {
   switch (action.type) {
     case CREATE_BOOK:
       return [...state, action.payload];
 
     case FETCH_ALL_BOOKS:
-      Object.keys(action.payload).map((key) => data.push(action.payload[key][0]));
-      return [...state, ...data];
+      return handleData(action.payload);
 
     case REMOVE_BOOK:
       return state.filter((book) => book.item_id !== action.payload);
