@@ -1,8 +1,8 @@
 /* eslint-disable consistent-return */
 import { ADD_BOOK, REMOVE_BOOK } from '../../actions/actionTypes';
-import { getBooks } from '../../../api/api';
+import { Books } from '../../../api/api';
 
-const initialState = getBooks();
+const initialState = Books();
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

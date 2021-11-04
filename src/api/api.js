@@ -49,7 +49,7 @@ export const postBook = (book) => postData(url, book);
 
 export const deleteBook = (id) => deleteData(`${url}/${id}`, id);
 
-export const getBooks = () => [
+export const Books = () => [
   {
     id: 'sdasas42323', title: 'The Hunger Games', author: 'Suzanne Collins', genre: 'Dystopian Fiction',
   },
