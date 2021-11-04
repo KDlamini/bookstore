@@ -8,7 +8,6 @@ import '../styles/AddBook.css';
 
 function AddBook({ setCurrentId }) {
   const [title, setTitle] = useState('');
-  const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
@@ -18,9 +17,10 @@ function AddBook({ setCurrentId }) {
 
     if (category.length > 0) {
       category.forEach((item) => newCategoryArray.push(item.value));
+      return newCategoryArray.join(', ');
     }
 
-    return newCategoryArray.join(', ');
+    return 'Not Specified';
   };
 
   const submitBookToStore = (e) => {
@@ -31,7 +31,6 @@ function AddBook({ setCurrentId }) {
     const newBook = {
       item_id: id,
       title,
-      author,
       category: handleCategoryInputs(),
     };
 
@@ -50,14 +49,6 @@ function AddBook({ setCurrentId }) {
           required
         />
 
-        <input
-          type="text"
-          name="author"
-          placeholder="Author"
-          onChange={(e) => setAuthor(e.target.value)}
-          required
-        />
-
         <Select
           options={options()}
           value={category}
@@ -67,7 +58,7 @@ function AddBook({ setCurrentId }) {
           Searchable
           Clearable
           isMulti
-          Required
+          required
         />
 
         <button type="submit">ADD BOOK</button>
