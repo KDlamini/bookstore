@@ -19,7 +19,7 @@ const postData = async (url, data) => {
         'Content-Type': 'application/json',
       },
     });
-    return response.json();
+    return response.text();
   } catch (error) {
     throw new Error(error.message);
   }

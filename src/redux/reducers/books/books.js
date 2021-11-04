@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable consistent-return */
 import { CREATE_BOOK, FETCH_ALL_BOOKS, REMOVE_BOOK } from '../../actions/actionTypes';
 

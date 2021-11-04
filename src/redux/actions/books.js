@@ -22,9 +22,9 @@ export const getBooks = () => async (dispatch) => {
 
 export const addBook = (book) => async (dispatch) => {
   try {
-    const { data } = await api.postBook(book);
+    await api.postBook(book);
 
-    dispatch({ type: CREATE_BOOK, payload: data });
+    dispatch({ type: CREATE_BOOK, payload: book });
   } catch (error) {
     throw new Error(error.message);
   }
