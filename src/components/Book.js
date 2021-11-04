@@ -9,9 +9,8 @@ function Book({ book }) {
 
   return (
     <div className="book-container">
-      <h3>{book.genre}</h3>
+      <h3>{book.category}</h3>
       <h2>{book.title}</h2>
-      <p>{book.author}</p>
       <ul className="book-actions">
         <li>
           <button type="button" className="action comments">Comments</button>
@@ -37,8 +36,7 @@ Book.propTypes = {
   book: PropTypes.shape({
     item_id: PropTypes.string,
     title: PropTypes.string,
-    author: PropTypes.string,
-    genre: PropTypes.string,
+    category: PropTypes.string,
   }),
 };
 
