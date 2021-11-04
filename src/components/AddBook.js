@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Select from 'react-select';
 import { useDispatch } from 'react-redux';
 import { addBook } from '../redux/actions/books';
+import options from './options';
+import '../styles/AddBook.css';
 
 function AddBook({ setCurrentId }) {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
+
   const dispatch = useDispatch();
 
   const submitBookToStore = (e, title, author, category) => {
@@ -27,36 +31,41 @@ function AddBook({ setCurrentId }) {
   return (
     <form>
       <h2>ADD NEW BOOK</h2>
-      <input
-        type="text"
-        name="title"
-        placeholder="Book title"
-        onChange={(e) => setTitle(e.target.value)}
-        required
-      />
+      <div className="form-group">
+        <input
+          type="text"
+          name="title"
+          placeholder="Book title"
+          onChange={(e) => setTitle(e.target.value)}
+          required
+        />
 
-      <input
-        type="text"
-        name="author"
-        placeholder="Author"
-        onChange={(e) => setAuthor(e.target.value)}
-        required
-      />
+        <input
+          type="text"
+          name="author"
+          placeholder="Author"
+          onChange={(e) => setAuthor(e.target.value)}
+          required
+        />
 
-      <input
-        type="text"
-        name="category"
-        placeholder="Category"
-        onChange={(e) => setCategory(e.target.value)}
-        required
-      />
+        <Select
+          options={options()}
+          value={category}
+          placeholder="Select category"
+          onChange={setCategory}
+          className="multi-select"
+          Searchable
+          Clearable
+          isMulti
+        />
 
-      <button
-        type="submit"
-        onClick={(e) => submitBookToStore(e, title, author, category)}
-      >
-        ADD BOOK
-      </button>
+        <button
+          type="submit"
+          onClick={(e) => submitBookToStore(e, title, author, category)}
+        >
+          ADD BOOK
+        </button>
+      </div>
     </form>
   );
 }
