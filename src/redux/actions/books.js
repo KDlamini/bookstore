@@ -1,13 +1,7 @@
 import {
-  CREATE_BOOK, REMOVE_BOOK, FETCH_ALL_BOOKS, DELETE_BOOK,
+  CREATE_BOOK, FETCH_ALL_BOOKS, REMOVE_BOOK,
 } from './actionTypes';
 import * as api from '../../api/api';
-
-// Action creators
-export const removeBook = (payload) => ({
-  type: REMOVE_BOOK,
-  payload,
-});
 
 // API action creators
 export const getBooks = () => async (dispatch) => {
@@ -30,11 +24,11 @@ export const addBook = (book) => async (dispatch) => {
   }
 };
 
-export const deleteBook = (id) => async (dispatch) => {
+export const removeBook = (id) => async (dispatch) => {
   try {
     await api.deleteBook(id);
 
-    dispatch({ type: DELETE_BOOK, payload: id });
+    dispatch({ type: REMOVE_BOOK, payload: id });
   } catch (error) {
     throw new Error(error.message);
   }
